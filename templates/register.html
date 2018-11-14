@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据采集系统登录界面</title>
+    <link rel="SHORTCUT ICON" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/css/register.css"/>
+    <script type="text/javascript" src="../static/js/tool.js"></script>
+    <script type="text/javascript" src="../static/js/base.js"></script>
+    <script src="../static/js/register.js"></script>
+</head>
+<body>
+{% if message %}
+    <div id="bg">
+        <div id="show">
+            <p>用户名或密码不能为空！</p>
+            <input type="button" value="关闭" onclick="hideDiv()">
+        </div>
+    </div>
+{%endif  %}
+<div id="reg">
+    <h2>用户注册</h2>
+    <form name="reg" action="/registerFn" method="post">
+        <dl>
+            <dd>用 户 名： <input type="text" name="user" class="text"/>
+                <span class="info info_user">请输入用户名，2~20位，由字母、数字和下划线组成！</span>
+                <span class="error error_user">输入不合法，请重新输入！</span>
+                <span class="succ succ_user">可用</span>
+            </dd>
+            <dd>密　　码： <input type="password" name="pass" class="text"/>
+                <span class="info info_pass">
+				<p>安全级别：<strong class="s s1">■</strong><strong class="s s2">■</strong><strong
+                        class="s s3">■</strong> <strong class="s s4" style="font-weight:normal;"></strong></p>
+				<p><strong class="q1" style="font-weight:normal;">○</strong> 6-20 个字符</p>
+				<p><strong class="q2" style="font-weight:normal;">○</strong> 只能包含大小写字母、数字和非空格字符</p>
+				<p><strong class="q3" style="font-weight:normal;">○</strong> 大、小写字母、数字、非空字符，2种以上</p>
+			</span>
+                <span class="error error_pass">输入不合法，请重新输入！</span>
+                <span class="succ succ_pass">可用</span>
+            </dd>
+            <dd>密码确认： <input type="password" name="notpass" class="text"/>
+                <span class="info info_notpass">请再一次输入密码！</span>
+                <span class="error error_notpass">密码不一致，请重新输入！</span>
+                <span class="succ succ_notpass">可用</span>
+            </dd>
+            <dd>性别：
+                <input type="radio" name="sex" id="sex1" value="男"><label for="nan">男</label>
+                <input type="radio" name="sex" id="sex2" value="女"><label for="nv">女</label>
+            </dd>
+            <dd>年龄：
+                <input type="text" name="age" class="text">
+            </dd>
+            <dd>电子邮件： <input type="text" name="email" class="text" autocomplete="off"/>
+                <span class="info info_email">请输入电子邮件！</span>
+                <span class="error error_email">邮件不合法，请重新输入！</span>
+                <span class="succ succ_email">可用</span>
+                <ul class="all_email">
+                    <li><span></span>@qq.com</li>
+                    <li><span></span>@163.com</li>
+                    <li><span></span>@sohu.com</li>
+                    <li><span></span>@sina.com.cn</li>
+                    <li><span></span>@gmail.com</li>
+                </ul>
+            </dd>
+            <dd class="birthday">出生年：<input type="text" name="year" autocomplete="off" class="text"/>
+                <span class="error error_birthday">尚未填写，请填写！</span>
+            </dd>
+            <dd style="padding:0 0 0 80px;"><input type="button" name="sub" class="submit"/></dd>
+        </dl>
+    </form>
+</div>
+</body>
+</html>

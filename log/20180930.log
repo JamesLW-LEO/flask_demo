@@ -1,0 +1,2 @@
+2018-09-30 09:47:40,715 - mainlogger - ERROR - Ö´ÐÐSQL£ºinsert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params£º('wangwuhui', 'wwh881016', 'ÄÐ', '80', '111@qq.com', '1111')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-30 11:16:03,817 - mainlogger - ERROR - Ö´ÐÐSQL£ºinsert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params£º('wangwuhui', 'wwh881016', 'ÄÐ', '80', '123@qq.com', '1234')(1264, "Out of range value for column 'userbirth' at row 1")

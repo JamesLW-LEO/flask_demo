@@ -1,0 +1,51 @@
+2018-09-28 13:40:41,041 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'asdasd123', '男', '22', 'dasd@163.com', '1234')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:42:48,791 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'fc961012', '男', '22', 'sdsf@163.com', '1234')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:52:05,863 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'fc961012', '男', '11', '982232123@qq.com', '1234')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:52:49,342 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('zgm', 'qwe123', '女', '22', '123@qq.com', '123')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:54:28,822 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'fc961012', '男', '22', '2323123@qq.com', '2343')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:54:55,071 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('zgm', 'qwe123', '女', '21', '273058659@qq.com', '1997.02.15')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 13:59:17,767 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'fc123123', '男', '23', '12342423@qq.com', '2011')(1062, "Duplicate entry 'feichong' for key 'username_UNIQUE'")
+2018-09-28 14:01:27,818 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('feichong', 'gv123123', '男', '22', '12331231@qq.com', '1233')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 16:52:16,524 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobArea = %s and jobMinsalary >= %s params：<entity.jobdata.JobData object at 0x0000024EBEFBF780>'JobData' object has no attribute 'translate'
+2018-09-28 16:52:16,524 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobArea = %s and jobMinsalary >= %s 出现异常，params:execute() first
+2018-09-28 17:12:57,955 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '33', '33333@qq.com', '1256')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 17:17:46,059 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '21', '1111@qq.com', '2018')(1062, "Duplicate entry 'liuwang' for key 'username_UNIQUE'")
+2018-09-28 17:20:29,864 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '21', '44444@qq.com', '2019')(1062, "Duplicate entry 'liuwang' for key 'username_UNIQUE'")
+2018-09-28 17:28:09,893 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '23', '22222@qq.com', '2018')(1062, "Duplicate entry 'liuwang' for key 'username_UNIQUE'")
+2018-09-28 17:30:06,620 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '21', '32223@qq.com', '1692')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 17:39:36,915 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', 'lw1234', '11111111@qq.com', '1034')(1264, "Out of range value for column 'userbirth' at row 1")
+2018-09-28 17:40:53,737 - mainlogger - ERROR - 执行SQL：insert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params：('liuwang', 'lw1234', '男', '34', '22222@qq.com', '1940')(1062, "Duplicate entry 'liuwang' for key 'username_UNIQUE'")
+2018-09-28 19:08:14,482 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like %%s% params：测试incomplete format
+2018-09-28 19:08:14,484 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like %%s% 出现异常，params:execute() first
+2018-09-28 19:12:42,267 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like %%s% params：测试incomplete format
+2018-09-28 19:12:42,267 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like %%s% 出现异常，params:execute() first
+2018-09-28 19:14:39,252 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%%s%' params：测试unsupported format character ''' (0x27) at index 52
+2018-09-28 19:14:39,253 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%%s%' 出现异常，params:execute() first
+2018-09-28 19:24:16,390 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%' and jobMinsalary >= %s params：14unsupported format character '?' (0x6d4b) at index 49
+2018-09-28 19:24:16,390 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%' and jobMinsalary >= %s 出现异常，params:execute() first
+2018-09-28 19:24:35,049 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%' and jobMinsalary >= %s params：10unsupported format character '?' (0x6d4b) at index 49
+2018-09-28 19:24:35,049 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%' and jobMinsalary >= %s 出现异常，params:execute() first
+2018-09-28 19:27:03,033 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%python%' params：10not enough arguments for format string
+2018-09-28 19:27:03,034 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%python%' 出现异常，params:execute() first
+2018-09-28 19:28:41,117 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%python%' params：8not enough arguments for format string
+2018-09-28 19:28:41,118 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%python%' 出现异常，params:execute() first
+2018-09-28 19:29:57,332 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%测试%' params：4.0not enough arguments for format string
+2018-09-28 19:29:57,332 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobMinsalary >= %s and jobPosition like '%测试%' 出现异常，params:execute() first
+2018-09-28 19:34:41,146 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobMinsalary >= %s params：10.0unsupported format character 'p' (0x70) at index 49
+2018-09-28 19:34:41,146 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobMinsalary >= %s 出现异常，params:execute() first
+2018-09-28 19:39:45,922 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobMinsalary >= %s params：(6.0,)unsupported format character '?' (0x6d4b) at index 49
+2018-09-28 19:39:45,922 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobMinsalary >= %s 出现异常，params:execute() first
+2018-09-28 19:46:34,891 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 params：None(1054, "Unknown column '朝阳区' in 'where clause'")
+2018-09-28 19:46:34,891 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 出现异常，params:execute() first
+2018-09-28 19:48:34,109 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 params：None(1054, "Unknown column '西城区' in 'where clause'")
+2018-09-28 19:48:34,110 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 出现异常，params:execute() first
+2018-09-28 19:50:10,061 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 params：None(1054, "Unknown column '朝阳区' in 'where clause'")
+2018-09-28 19:50:10,061 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 出现异常，params:execute() first
+2018-09-28 19:51:57,095 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 params：None(1054, "Unknown column '朝阳区' in 'where clause'")
+2018-09-28 19:51:57,096 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%测试%'and jobArea = 朝阳区 出现异常，params:execute() first
+2018-09-28 19:57:44,410 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 and jobMinsalary >= 7.0 params：None(1054, "Unknown column '西城区' in 'where clause'")
+2018-09-28 19:57:44,411 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 and jobMinsalary >= 7.0 出现异常，params:execute() first
+2018-09-28 19:59:27,835 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 异地招聘 and jobMinsalary >= 6.0 params：None(1054, "Unknown column '异地招聘' in 'where clause'")
+2018-09-28 19:59:27,835 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 异地招聘 and jobMinsalary >= 6.0 出现异常，params:execute() first
+2018-09-28 20:18:47,074 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 params：None(1054, "Unknown column '西城区' in 'where clause'")
+2018-09-28 20:18:47,074 - mainlogger - ERROR - 执行SQL：select * from t_jobdata where jobPosition like '%python%'and jobArea = 西城区 出现异常，params:execute() first

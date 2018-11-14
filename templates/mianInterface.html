@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据采集系统</title>
+    <link rel="SHORTCUT ICON" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/css/main.css"/>
+    <link rel="stylesheet" href="../static/css/main_inner.css">
+    <style>
+        #video{
+            display: none;
+            width: 600px;
+            height: 380px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+<div class="messager" style="margin:0px auto;">
+    <div class="title"><h3>数&nbsp;据&nbsp;采&nbsp;集&nbsp;系&nbsp;统</h3></div>
+    <div class="userinfo">
+        <span id="time" class="date"></span>
+        <span class="visitor">欢迎<strong><i>{{ session.get("userName") }}</i></strong>访问本系统！</span>
+        <a href="/logout">注销</a>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>个人信息</li>
+            <li>数据采集</li>
+            <li>数据分析</li>
+            <li>图片展示</li>
+        </ul>
+    </div>
+    <div id="content">
+        <ul>
+            <li>
+                <h5 style="font-size: 24px;color:#000;">个人信息表</h5>
+                <div id="infotab">
+                    <table border="1" align="center" id="tab1">
+                        <tr>
+                            <td class="td1">ID</td>
+                            <td class="td2">{{ result[0] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">用户名</td>
+                            <td class="td2">{{ result[1] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">密码</td>
+                            <td class="td2">{{ result[2] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">性别</td>
+                            <td class="td2">{{ result[3] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">年龄</td>
+                            <td class="td2">{{ result[4] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">邮箱</td>
+                            <td class="td2">{{ result[5] }}</td>
+                        </tr>
+                        <tr>
+                            <td class="td1">出生年</td>
+                            <td class="td2">{{ result[6] }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li id="two">
+                <h5 style="font-size: 24px;color:#000;">北京地区软件开发工程师岗位信息</h5>
+                <form action="/getjob" name="" method="post">
+                    <span>职位:<input type="text" name="pos" class="position" placeholder="如:python开发工程师"></span>
+                    <span>地区:<select name="area">
+                                <option value="北京">北京</option>
+                                <option value="海淀区">海淀区</option>
+                                <option value="朝阳区">朝阳区</option>
+                                <option value="西城区">西城区</option>
+                                <option value="异地招聘">异地招聘</option>
+                                <option value="昌平区">昌平区</option>
+                                <option value="丰台区">丰台区</option>
+                                <option value="大兴区">大兴区</option>
+                                <option value="东城区">东城区</option>
+                                <option value="石景山区">石景山区</option>
+                                <option value="房山区">房山区</option>
+                                <option value="顺义区">顺义区</option>
+                                <option value="通州区">通州区</option>
+                                <option value="门头沟区">门头沟区</option>
+                            </select></span>
+                    <span>最低薪资:<select name="minsalary" id="selid" onclick="addSala();return false;">
+                                <option value="1.5">--K/月--</option>
+                            </select></span>
+                    <span><input type="submit" value="搜索" class="search"></span>
+                </form>
+                <table border="1">
+                    <tr style="color:#ff3;font-size:20px;">
+                        <td>职位名</td>
+                        <td>公司名</td>
+                        <td>工作地点</td>
+                        <td>薪资</td>
+                        <td>发布时间</td>
+                    </tr>
+                    {% for result in results %}
+                        {% if result[4]=="异地招聘" %}
+                            <tr style="color:#fff;">
+                                <td>{{ result[1] }}</td>
+                                <td>{{ result[2] }}</td>
+                                <td>{{ result[3] }}</td>
+                                <td>{{ result[5] }}-{{ result[6] }}K/月</td>
+                                <td>{{ result[7] }}</td>
+                            </tr>
+                        {% else %}
+                            <tr style="color:#fff;">
+                                <td>{{ result[1] }}</td>
+                                <td>{{ result[2] }}</td>
+                                <td>{{ result[3] }}-{{ result[4] }}</td>
+                                <td>{{ result[5] }}-{{ result[6] }}K/月</td>
+                                <td>{{ result[7] }}</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </table>
+                <h5 style="color:#f00;font-size:24px;line-height: 340px;">{{ message }}</h5>
+            </li>
+            <li id="three" style="overflow-y: scroll;">
+                <h5 style="font-size: 24px;color:#000;">各个职位详细数据展示</h5>
+                <form action="/position" method="post">
+                    <span>北京各地区python开发工程师职位排行<input type="submit" value="搜索" class="search"></span>
+                </form>
+                <table border="1">
+                    <tr style="color:#ff3;font-size:20px;">
+                        <td>职位名</td>
+                        <td>地区</td>
+                        <td>最低薪</td>
+                        <td>最高薪</td>
+                        <td>数量</td>
+                    </tr>
+                    {% for result in results1 %}
+                        <tr style="color:#fff;">
+                            <td>{{ result[0] }}</td>
+                            <td>{{ result[1] }}</td>
+                            <td>{{ result[2] }}K/月</td>
+                            <td>{{ result[3] }}K/月</td>
+                            <td>{{ result[4] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <form action="/salary" method="post">
+                    <span>薪资排名前10位的职位信息<input type="submit" value="搜索" class="search"></span>
+                </form>
+                <table border="1">
+                    <tr style="color:#ff3;font-size:20px;">
+                        <td>职位</td>
+                        <td>公司</td>
+                        <td>地区</td>
+                        <td>最低薪</td>
+                    </tr>
+                    {% for result in results2 %}
+                        <tr style="color:#fff;">
+                            <td>{{ result[0] }}</td>
+                            <td>{{ result[1] }}</td>
+                            <td>{{ result[2] }}</td>
+                            <td>{{ result[3] }}K/月</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <form action="/area" method="post">
+                    <span>北京海淀区薪资排名前10的职位信息<input type="submit" value="搜索" class="search"></span>
+                </form>
+                <table border="1">
+                    <tr style="color:#ff3;font-size:20px;">
+                        <td>职位</td>
+                        <td>公司</td>
+                        <td>地区</td>
+                        <td>薪资</td>
+                    </tr>
+                    {% for result in results3 %}
+                        <tr style="color:#fff;">
+                            <td>{{ result[1] }}</td>
+                            <td>{{ result[2] }}</td>
+                            <td>北京-{{ result[3] }}</td>
+                            <td>{{ result[5] }}-{{ result[6] }}K/月</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </li>
+            <li>
+                <h5 style="line-height: 100px;font-size: 30px;color:#0066ff;text-shadow:0 0 5px #fff;cursor:pointer;" id="show">
+                    <i>带你体验不一样的大数据时代！</i>
+                </h5>
+                <div id="video"><embed src='http://player.youku.com/player.php/sid/XMTMxMDU2MjQxNg==/v.swf' allowFullScreen='true' quality='high' width='600' height='380' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed></div>
+                <div id="four">
+                    <div class="box">
+                        <div class="inner-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="inner-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="inner-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="inner-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="inner-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <a class="left" href="javascript:;">&lt;</a>
+                    <a class="right" href="javascript:;">&gt;</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="qq_con">
+    <div class="qq_show">
+        <div class="top">
+            <img src="../static/img/top.png" width="" height="" border="0" alt="" class="top-img"/>
+        </div>
+        <div class="content">
+            <img src="../static/img/ewm.jpg" class="ewm"/>
+            <p>
+                <img src="../static/img/qq.jpg" width="" height="" border="0" alt="" align="absmiddle">
+                <a href="javascritp:void(0);" width="" height="" border="0" alt="" target="_self">联系:3075312534
+                </a>
+            </p>
+        </div>
+        <div class="btn">
+            <img src="../static/img/bot.png" width="" height="" border="0" alt=""><!-- 行内元素 -->
+        </div>
+    </div>
+    <div class="qq_hide">
+        <img src="../static/img/small.png" width="" height="" border="0" alt="">
+    </div>
+</div>
+<script src="../static/js/mainface.js"></script>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/main_move.js"></script>
+<script>
+    function addSala() {
+        var selid = document.getElementById("selid");
+        if (selid.options.length <= 30) {
+            for (var i = 2; i < 31; i++) {     //循环添加多个值
+                selid.options.add(new Option(i + "K/月", i));// selectId是指定<select>标签的id
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    document.getElementById("show").onclick=function () {
+        if (document.getElementById("four").style.display == "none") {
+            document.getElementById("video").style.display = "none";
+            document.getElementById("four").style.display = "block";
+        }
+        else{
+            document.getElementById("video").style.display = "block";
+            document.getElementById("four").style.display = "none";
+        }
+    }
+
+</script>
+</body>
+</html>

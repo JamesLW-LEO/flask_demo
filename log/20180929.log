@@ -1,0 +1,2 @@
+2018-09-29 10:54:26,393 - mainlogger - ERROR - Ö´ÐÐSQL£ºinsert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params£º('liuwang', 'lwasw12', 'ÄÐ', '12', '222222222@qq.com', '1982')(1062, "Duplicate entry 'liuwang' for key 'username_UNIQUE'")
+2018-09-29 15:56:44,299 - mainlogger - ERROR - Ö´ÐÐSQL£ºinsert into t_user(username,userpwd,usersex,userage,useremail,userbirth) VALUES (%s,%s,%s,%s,%s,%s) params£º('feichong', 'fc961012', 'ÄÐ', '11', 'sad@163.com', '1233')(1264, "Out of range value for column 'userbirth' at row 1")
